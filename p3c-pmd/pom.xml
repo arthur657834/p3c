@@ -15,9 +15,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <pmd.version>7.13.0</pmd.version>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <annotation.version>1.3.2</annotation.version>
-    <kotlin.version>1.3.72</kotlin.version>
+    <maven.compiler.target>21</maven.compiler.target>
+    <annotation.version>3.0.0</annotation.version>
+    <kotlin.version>2.1.20</kotlin.version>
   </properties>
   <description>Alibaba Java Coding Guidelines PMD implementations</description>
   <url>https://github.com/alibaba/p3c</url>
@@ -84,11 +84,11 @@
       <artifactId>pmd-java</artifactId>
       <version>${pmd.version}</version>
     </dependency>
-    <dependency>
-      <groupId>net.sourceforge.pmd</groupId>
-      <artifactId>pmd-vm</artifactId>
-      <version>${pmd.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>net.sourceforge.pmd</groupId>-->
+<!--      <artifactId>pmd-vm</artifactId>-->
+<!--      <version>${pmd.version}</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>net.sourceforge.pmd</groupId>
       <artifactId>pmd-test</artifactId>
@@ -96,8 +96,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
+      <groupId>jakarta.annotation</groupId>
+      <artifactId>jakarta.annotation-api</artifactId>
       <version>${annotation.version}</version>
     </dependency>
     <dependency>
@@ -140,13 +140,13 @@
             </goals>
           </execution>
         </executions>
-        <dependencies>
-          <dependency>
-            <groupId>com.alibaba.p3c</groupId>
-            <artifactId>p3c-pmd</artifactId>
-            <version>2.0.1</version>
-          </dependency>
-        </dependencies>
+<!--        <dependencies>-->
+<!--          <dependency>-->
+<!--            <groupId>com.alibaba.p3c</groupId>-->
+<!--            <artifactId>p3c-pmd</artifactId>-->
+<!--            <version>2.0.1</version>-->
+<!--          </dependency>-->
+<!--        </dependencies>-->
       </plugin>
       <plugin>
         <artifactId>kotlin-maven-plugin</artifactId>
@@ -182,7 +182,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>3.14.0</version>
         <configuration>
           <source>${maven.compiler.target}</source>
           <target>${maven.compiler.target}</target>
@@ -217,7 +217,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.7.1</version>
         <configuration>
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -236,7 +236,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version>
+        <version>3.11.2</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -256,7 +256,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.6</version>
+        <version>3.2.7</version>
         <executions>
           <execution>
             <id>sign-artifacts</id>
